@@ -405,8 +405,8 @@ button {
 
 .scene {
   position: relative;
-  width: 30rem;
-  height: 30rem;
+  width: 15rem;
+  height: 15rem;
   margin: 0 auto;
   perspective: 100rem;
 }
@@ -439,55 +439,55 @@ button {
 }
 
 .cube__face--front {
-  transform: translateZ(15rem);
+  transform: translateZ(7.5rem);
 }
 
 .cube__face--right {
-  transform: rotateY(90deg) translateZ(15rem);
+  transform: rotateY(90deg) translateZ(7.5rem);
 }
 
 .cube__face--back {
-  transform: rotateY(180deg) translateZ(15rem);
+  transform: rotateY(180deg) translateZ(7.5rem);
 }
 
 .cube__face--left {
-  transform: rotateY(-90deg) translateZ(15rem);
+  transform: rotateY(-90deg) translateZ(7.5rem);
 }
 
 .cube__face--top {
-  transform: rotateX(90deg) translateZ(15rem);
+  transform: rotateX(90deg) translateZ(7.5rem);
 }
 
 .cube__face--bottom {
-  transform: rotateX(-90deg) translateZ(15rem);
+  transform: rotateX(-90deg) translateZ(7.5rem);
 }
 
 .cube.initial-position {
-  transform: translateZ(-15rem) translateY(-2rem) rotateX(-15deg) rotateY(18deg) rotateZ(2deg);
+  transform: translateZ(-7.5rem) translateY(-2rem) rotateX(-15deg) rotateY(18deg) rotateZ(2deg);
 }
 
 .cube.show-front {
-  transform: translateZ(-15rem);
+  transform: translateZ(-7.5rem);
 }
 
 .cube.show-right {
-  transform: translateZ(-15rem) rotateY(-90deg);
+  transform: translateZ(-7.5rem) rotateY(-90deg);
 }
 
 .cube.show-back {
-  transform: translateZ(-15rem) rotateY(-180deg);
+  transform: translateZ(-7.5rem) rotateY(-180deg);
 }
 
 .cube.show-left {
-  transform: translateZ(-15rem) rotateY(90deg);
+  transform: translateZ(-7.5rem) rotateY(90deg);
 }
 
 .cube.show-top {
-  transform: translateZ(-15rem) rotateX(-90deg);
+  transform: translateZ(-7.5rem) rotateX(-90deg);
 }
 
 .cube.show-bottom {
-  transform: translateZ(-15rem) rotateX(90deg);
+  transform: translateZ(-7.5rem) rotateX(90deg);
 }
 
 .thumbnails {
