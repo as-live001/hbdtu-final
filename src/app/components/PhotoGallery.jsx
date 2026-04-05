@@ -11,22 +11,11 @@ export default function PhotoGallery({ onNext }) {
         { id: 2, src: "/images/2.jpg" },
         { id: 3, src: "/images/3.jpg" },
         { id: 4, src: "/images/4.jpg" },
-        { id: 5, src: "/images/5.jpg" },
-        { id: 6, src: "/images/6.jpg" },
+        { id: 5, src: "/images/1.jpg" },
+        { id: 6, src: "/images/2.jpg" },
     ]
 
-    const [currentFace, setCurrentFace] = useState('front')
-
-    const getTransform = (face) => {
-        switch(face){
-            case 'front': return 'rotateY(0deg)';
-            case 'right': return 'rotateY(-90deg)';
-            case 'back': return 'rotateY(-180deg)';
-            case 'left': return 'rotateY(90deg)';
-            case 'top': return 'rotateX(-90deg)';
-            case 'bottom': return 'rotateX(90deg)';
-        }
-    }
+    const [currentFace, setCurrentFace] = useState('initial-position')
 
     return (
         <motion.div
@@ -54,34 +43,30 @@ export default function PhotoGallery({ onNext }) {
                 </motion.div>
 
                 <h1 className="text-4xl md:text-6xl py-1 md:py-2 font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-400 mb-6">
-                Moments with You 
+                    Moments with You
                 </h1>
                 <p className="text-xl text-purple-300">Beautiful moments with Madam Jii 📸</p>
             </motion.div>
 
-            {/* Cube Gallery */}
-            <div className="moments-container">
-                <div className="scene">
-                    <div className="cube" style={{ transform: getTransform(currentFace) }}>
-                        <div className="cube__face cube__face--front"><img src={photos[0].src} alt="Front" /></div>
-                        <div className="cube__face cube__face--right"><img src={photos[1].src} alt="Right" /></div>
-                        <div className="cube__face cube__face--back"><img src={photos[2].src} alt="Back" /></div>
-                        <div className="cube__face cube__face--left"><img src={photos[3].src} alt="Left" /></div>
-                        <div className="cube__face cube__face--top"><img src={photos[4].src} alt="Top" /></div>
-                        <div className="cube__face cube__face--bottom"><img src={photos[5].src} alt="Bottom" /></div>
-                    </div>
-                </div>
-
-                <div className="thumbnails">
-                    <img src={photos[0].src} alt="Front" onClick={() => setCurrentFace('front')} />
-                    <img src={photos[1].src} alt="Right" onClick={() => setCurrentFace('right')} />
-                    <img src={photos[2].src} alt="Back" onClick={() => setCurrentFace('back')} />
-                    <img src={photos[3].src} alt="Left" onClick={() => setCurrentFace('left')} />
-                    <img src={photos[4].src} alt="Top" onClick={() => setCurrentFace('top')} />
-                    <img src={photos[5].src} alt="Bottom" onClick={() => setCurrentFace('bottom')} />
+            <div className="scene">
+                <div className={`cube ${currentFace}`}>
+                    <div className="cube__face cube__face--front"><img src={photos[0].src} alt="Front" /></div>
+                    <div className="cube__face cube__face--right"><img src={photos[1].src} alt="Right" /></div>
+                    <div className="cube__face cube__face--back"><img src={photos[2].src} alt="Back" /></div>
+                    <div className="cube__face cube__face--left"><img src={photos[3].src} alt="Left" /></div>
+                    <div className="cube__face cube__face--top"><img src={photos[4].src} alt="Top" /></div>
+                    <div className="cube__face cube__face--bottom"><img src={photos[5].src} alt="Bottom" /></div>
                 </div>
             </div>
 
+            <div className="thumbnails">
+                <img src={photos[0].src} alt="Front" onClick={() => setCurrentFace('show-front')} />
+                <img src={photos[1].src} alt="Right" onClick={() => setCurrentFace('show-right')} />
+                <img src={photos[2].src} alt="Back" onClick={() => setCurrentFace('show-back')} />
+                <img src={photos[3].src} alt="Left" onClick={() => setCurrentFace('show-left')} />
+                <img src={photos[4].src} alt="Top" onClick={() => setCurrentFace('show-top')} />
+                <img src={photos[5].src} alt="Bottom" onClick={() => setCurrentFace('show-bottom')} />
+            </div>
             <motion.div
                 className="mt-12"
                 initial={{ opacity: 0, y: 50 }}
